@@ -1,4 +1,4 @@
-# Portal scaffolding
+# Setup
 
 Using Vue3 to build this app
 
