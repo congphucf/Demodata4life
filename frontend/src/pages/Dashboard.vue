@@ -1,6 +1,6 @@
 <template lang="pug">
 Page.dashboard( full-width style="position: relative; padding: 0; background-color: white;")
-  Box(style="background-image: url(/bg-head.png); background-repeat: no-repeat; background-size: 150%;  margin-top: -20px; margin: 0; background-position: center top")
+  Box(style="background-image: url(/bg-head.png); background-repeat: no-repeat; background-size: cover;  margin-top: -20px; margin: 0; background-position: center top; height: 175px; " )
     Box.header(style="display: flex; margin-left: 7%;").middle
       img(
         src = "/huy-hieu-cong-an-nhan.png"
@@ -10,7 +10,7 @@ Page.dashboard( full-width style="position: relative; padding: 0; background-col
       Box(style="display: flex; flex-direction: column; align-items: center; justify-content: center;")
         Text( variant="heading3xl" as="h1" style="font-size: 35px; color: #d71920; font-family: 'UTM-Alexander', sans-serif; ")  CỔNG TRA CỨU 
         Text(  variant="heading3xl" as="h1" style="font-size: 35px; color: #d71920; font-family: 'UTM-Alexander', sans-serif;") THÔNG TIN DÂN CƯ
-    Box.search(style="position: relative;background-image: url(/sen.png); margin-top: -20px; background-size: 100%; height: 370px;")
+    Box.search(style="position: relative;background-image: url(/sen.png); margin-top: -20px; background-size: cover; height: 370px;")
       Box(style="margin-top:-25px; position: absolute; left: 50%; transform: translateX(-50%); display: flex; background-color: red; z-index: 20; width: 80vw; justify-content: space-between;")
         Box.filter(style="width: 25%;" @click="handleAction('so_dinh_danh')" :class="{ 'selected': identifier_type ==='so_dinh_danh'}")
           Text(as='h2' variant="headingMd" style="color: white; padding: 15px; font-size: 17px;") Tìm kiếm bằng số định danh
@@ -33,7 +33,7 @@ Page.dashboard( full-width style="position: relative; padding: 0; background-col
               Text(as='h2' variant="headingMd" style="margin: 2px;font-size: 17px; color: #d71920; font-family: 'UTM-Alexander', sans-serif; ") Đối với địch, phải cương quyết, khôn khéo.
 
           LayoutSection(variant="oneHalf")
-            Box.search-bar(style="display: flex; align-items: center; background-color: white; height: 50px; border: 1px solid #f0e3af; border-radius: 5px; padding: 5px; margin-right: 50px; width: 60%; display: flex; justify-content: space-between;")
+            Box.search-bar(style="display: flex; align-items: center; background-color: white; height: 50px; border: 1px solid #f0e3af; border-radius: 5px; padding: 5px; margin-right: 20%; margin-left: 20%; width: 60%; display: flex; justify-content: space-between;")
               input.search-input(v-if="identifier_type !== 'hinh_anh'" type="text" v-model="key" placeholder="Nhập từ khoá tìm kiếm" style="flex: 1; border: none; font-size: 16px; outline: none; ")
               Box(v-else)
                 input#fileInput(type="file" @change="handleImageUpload" style="display: none;")
